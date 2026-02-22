@@ -1,0 +1,6 @@
+@CRUDS5_Docentes_HostAddress = http://localhost:5095
+
+GET {{CRUDS5_Docentes_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

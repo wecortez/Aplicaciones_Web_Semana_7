@@ -1,0 +1,58 @@
+<div class="container">
+  <h1>Lista de Docentes</h1>
+
+  <button class="btn btn-outline-primary mb-3" type="button" routerLink="/nuevoDocente">
+    Nuevo Docente
+  </button>
+
+  <table class="table table-responsive table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Materia</th>
+        <th>Email</th>
+        <th>Telefono</th>
+        <th>Servicio</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+        <th>Iva</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (docente of listaDocentes(); track docente.id; let contador = $index) {
+        <tr>
+          <td>{{ contador + 1 }}</td>
+          <td>{{ docente.nombres }}</td>
+          <td>{{ docente.apellidos }}</td>
+          <td>{{ docente.materia }}</td>
+          <td>{{ docente.email }}</td>
+          <td>{{ docente.telefono }}</td>
+          <td>{{ docente.servicio }}</td>
+          <td>{{ docente.cantidad }}</td>
+          <td>{{ docente.precio }}</td>
+          <td>{{ docente.iva }}</td>
+          <td>
+            <button class="btn btn-outline-warning me-2"
+              [routerLink]="['/editarDocente', docente.id]">
+              Editar
+            </button>
+
+            <button class="btn btn-outline-danger me-2"
+              (click)="eliminar(docente.id)">
+              Eliminar
+            </button>
+
+            <button class="btn btn-outline-success"
+              (click)="imprimirProforma(docente)">
+              Imprimir
+            </button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,30 @@
+<header class="site-header">
+  <nav class="navbar" aria-label="Navegación principal">
+    <a class="brand" [routerLink]="['/docentes']">
+      <i class="bi bi-mortarboard-fill"></i>
+      Docentes
+    </a>
+
+    <input class="nav-toggle" type="checkbox" id="nav-toggle" />
+    <label class="nav-toggle-label" for="nav-toggle" aria-label="Abrir menú">
+      <span></span>
+    </label>
+
+    <ul class="nav-links">
+
+      <li>
+        <a [routerLink]="['/docentes']" routerLinkActive="active">
+          <i class="bi bi-person-badge"></i>
+          Docentes
+        </a>
+      </li>
+
+      <li>
+        <a [routerLink]="['/nuevoDocente']" routerLinkActive="active">
+          <i class="bi bi-person-plus"></i>
+          Nuevo Docente
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
